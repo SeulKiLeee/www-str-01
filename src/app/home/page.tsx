@@ -2,6 +2,7 @@
 import Image from 'next/image'
 import { useAuthStore } from '@/stores/auth';
 import styles from '@/styles/page.module.css'
+import MyTodayActivitiesCard from '@/components/elements/home/MyTodayActivitiesCard';
 
 const HomePage = ():JSX.Element => {
   const isLogedIn = useAuthStore((state) => state.isLogedIn);
@@ -16,6 +17,7 @@ const HomePage = ():JSX.Element => {
               <h3>Home Main</h3>
               <h3>로그인 된 화면입니다.</h3>
             </div>
+              <MyTodayActivitiesCard />
           </div>
         ) : (
           <div>

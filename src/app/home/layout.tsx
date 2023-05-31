@@ -4,6 +4,8 @@ export default function HomePageLayout({
   children: React.ReactNode;
 }) {
   return (
-    <></>
+    <>
+      {children}
+    </>
   );
 }

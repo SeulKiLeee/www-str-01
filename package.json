@@ -18,11 +18,13 @@
     "next": "13.4.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-query": "^3.39.3",
     "styled-components": "^5.3.11",
     "typescript": "5.0.4",
     "zustand": "^4.3.8"
   },
   "devDependencies": {
-    "@types/styled-components": "^5.1.26"
+    "@types/styled-components": "^5.1.26",
+    "msw": "^1.2.1"
   }
 }

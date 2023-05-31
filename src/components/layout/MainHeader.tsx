@@ -1,7 +1,6 @@
-'use client'
 import Image from 'next/image';
 import React from 'react';
-import styled from 'styled-components';
+import styles from '@/styles/layout.module.css';
 
 interface PropsI {
     title?: string;
@@ -14,36 +13,37 @@ const MainHeader = (props:PropsI): JSX.Element => {
     return (
         <>
         { isShow && (
-            <Header>
-                <Logo>
+            <header className={styles.mainHeader}>
+                <div className={styles.mainHeader__logoWrap}>
                     <Image
-                        src="logo_appbar.svg"
-                        alt="cazzle logo"
+                        src='logo_appbar.svg'
+                        alt='cazzle logo'
                         width={82}
                         height={16}
                     />
-                </Logo>
-            </Header>
+                </div>
+                <ul className={styles.mainHeader__btWrapUl}>
+                    <li className={styles.mainHeader__btNoti}>
+                        <Image
+                            src='https://www.lotte-cazzle.com/statics/images/ic_appbar_noti.svg'
+                            alt='cazzle logo'
+                            width={36}
+                            height={36}
+                        />
+                    </li>
+                    <li className={styles.mainHeader__btMenu}>
+                        <Image
+                            src='https://www.lotte-cazzle.com/statics/images/ic_appbar_side_menu.svg'
+                            alt='cazzle logo'
+                            width={36}
+                            height={36}
+                        />
+                    </li>
+                </ul>
+            </header>
         )}
         </>
     )
 }
 
 export default MainHeader;
-
-
-const Header = styled.header`
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 54px;
-    background: #fff;
-    z-index: 50;
-    transition: background-color .2s;
-    padding: 10px;
-`;
-
-const Logo = styled.div`
-
-`;

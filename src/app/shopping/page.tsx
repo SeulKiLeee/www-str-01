@@ -1,11 +1,13 @@
 import Image from 'next/image'
-import styles from '@/app/page.module.css'
+import styles from '@/styles/page.module.css';
 
 const ShoppingPage = ():JSX.Element => {
   return (
-    <main className={styles.main}>
-      <h1>Shopping Page</h1>
-    </main>
+    <>
+       <div className={styles.main}>
+        <h1>Shopping Page</h1>
+      </div>
+    </>
   )
 }
 

@@ -1,5 +1,4 @@
-import Image from 'next/image'
-import styles from '@/app/page.module.css'
+import styles from '@/styles/page.module.css'
 
 const HealthPage = ():JSX.Element => {
   return (
