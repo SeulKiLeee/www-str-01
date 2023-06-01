@@ -5,7 +5,7 @@ const MyTodayActivitiesCard = (): JSX.Element => {
         <>
             <CardSection 
                 backgroundColor='#ffffff'
-                borderColor='#000000' 
+                borderColor='#000000'
                 borderRadius={10}
             >
                 <p>나의 오늘 활동</p>
