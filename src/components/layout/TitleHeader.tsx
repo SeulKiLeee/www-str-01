@@ -5,14 +5,14 @@ import { useRouter } from 'next/navigation';
 import React from 'react';
 import styled from 'styled-components';
 
-interface PropsI {
+interface IProps {
     title?: string;
     isShow: boolean;
     showBackButton: boolean;
     rightButtonAction?: React.ReactNode;
 }
 
-const TitleHeader = (props:PropsI): JSX.Element => {
+const TitleHeader = (props:IProps): JSX.Element => {
     const { title, isShow, showBackButton, rightButtonAction } = props;
     const router = useRouter();
 

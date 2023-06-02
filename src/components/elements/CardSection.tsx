@@ -1,7 +1,7 @@
 
 import { styled } from 'styled-components';
 
-interface PropsI {
+interface IProps {
     backgroundcolor?: string;
     bordercolor?: string;
     borderradius?: number;
@@ -11,7 +11,7 @@ interface PropsI {
 }
 
 
-const CardSection = ( props:PropsI ): JSX.Element => {
+const CardSection = ( props:IProps ): JSX.Element => {
     const { backgroundcolor, bordercolor, borderradius, width, height, children } = props;
     return (
         <>
@@ -31,21 +31,23 @@ const CardSection = ( props:PropsI ): JSX.Element => {
 export default CardSection;
 
 
-const CardSectionWrapper = styled.div<PropsI>`
+const CardSectionWrapper = styled.div<IProps>`
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: 20px auto;
-    padding: 0 1rem;
     max-width: 1200px;
     min-height: 100px;
     width: ${props => props.width || '100%'};
     height: ${props => props.height || 'auto'};
     background-color: ${props => props.backgroundcolor || '#fff'};
     border: 1px solid ${props => props.bordercolor || '#000'};
-    border-radius: ${props => props.borderradius || 6}px;
+    border-radius: ${props => props.borderradius || 12}px;
     overflow: hidden;
     position: relative;
     z-index: 1;
+    padding: 20px 20px 24px;
+    // box-shadow: 1px 4px 10px 2px #e5e5e5;
+}
 `;

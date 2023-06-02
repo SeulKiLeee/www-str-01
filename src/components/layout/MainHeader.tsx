@@ -4,12 +4,12 @@ import Image from 'next/image';
 import React from 'react';
 import styled from 'styled-components';
 
-interface PropsI {
+interface IProps {
     title?: string;
     isShow: boolean;
 }
 
-const MainHeader = (props:PropsI): JSX.Element => {
+const MainHeader = (props:IProps): JSX.Element => {
     const { title, isShow } = props;
     return (
         <>

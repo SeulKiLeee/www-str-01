@@ -5,11 +5,11 @@ import React from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
 
-interface PropsI {
+interface IProps {
     isShow: boolean;
 }
 
-const BottomNavigator = (props:PropsI): JSX.Element => {
+const BottomNavigator = (props:IProps): JSX.Element => {
     const { isShow } = props;
     return (
         <>
