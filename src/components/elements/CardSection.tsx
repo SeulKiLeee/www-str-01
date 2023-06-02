@@ -2,9 +2,9 @@
 import { styled } from 'styled-components';
 
 interface PropsI {
-    backgroundColor?: string;
-    borderColor?: string;
-    borderRadius?: number;
+    backgroundcolor?: string;
+    bordercolor?: string;
+    borderradius?: number;
     width?: string;
     height?: string;
     children: React.ReactNode;
@@ -12,15 +12,15 @@ interface PropsI {
 
 
 const CardSection = ( props:PropsI ): JSX.Element => {
-    const { backgroundColor, borderColor, borderRadius, width, height, children } = props;
+    const { backgroundcolor, bordercolor, borderradius, width, height, children } = props;
     return (
         <>
             <CardSectionWrapper
                 width={width}
                 height={height}
-                backgroundColor={backgroundColor}
-                borderColor={borderColor}
-                borderRadius={borderRadius}
+                backgroundcolor={backgroundcolor}
+                bordercolor={bordercolor}
+                borderradius={borderradius}
             >
                     { children }
             </CardSectionWrapper>
@@ -41,9 +41,9 @@ const CardSectionWrapper = styled.div<PropsI>`
     min-height: 100px;
     width: ${props => props.width || '100%'};
     height: ${props => props.height || 'auto'};
-    background-color: ${props => props.backgroundColor || '#fff'};
-    border: 1px solid ${props => props.borderColor || '#000'};
-    border-radius: ${props => props.borderRadius || 6}px;
+    background-color: ${props => props.backgroundcolor || '#fff'};
+    border: 1px solid ${props => props.bordercolor || '#000'};
+    border-radius: ${props => props.borderradius || 6}px;
     overflow: hidden;
     position: relative;
     z-index: 1;
