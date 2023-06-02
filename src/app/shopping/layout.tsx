@@ -4,6 +4,8 @@ export default function ShoppingPageLayout({
   children: React.ReactNode;
 }) {
   return (
-    <></>
+    <>
+      {children}
+    </>
   );
 }

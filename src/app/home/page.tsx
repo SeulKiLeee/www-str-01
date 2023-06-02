@@ -12,7 +12,6 @@ const HomePage = ():JSX.Element => {
     <>
       <MainHeader
         isShow={true}
-        showBackButton={false}
       />
         <main className={styles.main}>
           {

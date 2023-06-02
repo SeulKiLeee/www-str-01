@@ -30,6 +30,7 @@ const CardSection = ( props:PropsI ): JSX.Element => {
 
 export default CardSection;
 
+
 const CardSectionWrapper = styled.div<PropsI>`
     display: flex;
     flex-direction: column;

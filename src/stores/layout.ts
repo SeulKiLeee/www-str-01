@@ -1,15 +1,29 @@
 import { create } from 'zustand'
 
 interface IMainHeaderStore {
-    isShow: boolean;
-    showBackButton: boolean;
+    isMainHeaderShow: boolean;
     showMainHeader: () => void;
     hideMainHeader: () => void;
 }
 
 export const useMainHeaderStore = create<IMainHeaderStore>()((set) => ({
-  isShow: true,
-  showBackButton: false,
-  showMainHeader: () => set(({ isShow: true })),
-  hideMainHeader: () => set({ isShow: false }),
+  isMainHeaderShow: true,
+  showMainHeader: () => set(({ isMainHeaderShow: true })),
+  hideMainHeader: () => set({ isMainHeaderShow: false }),
 }));
+
+
+
+
+interface IBottomNavigationStore {
+  isNavigatorShow: boolean;
+  showMBottomNavigator: () => void;
+  hideMBottomNavigator: () => void;
+}
+
+export const useBottomNavigatorStore = create<IBottomNavigationStore>()((set) => ({
+isNavigatorShow: true,
+showMBottomNavigator: () => set(({ isNavigatorShow: true })),
+hideMBottomNavigator: () => set({ isNavigatorShow: false }),
+}));
+

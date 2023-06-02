@@ -2,17 +2,15 @@
 
 import Image from 'next/image';
 import React from 'react';
-// import styles from '@/styles/layout.module.css';
 import styled from 'styled-components';
 
 interface PropsI {
     title?: string;
     isShow: boolean;
-    showBackButton: boolean;
 }
 
 const MainHeader = (props:PropsI): JSX.Element => {
-    const { title, isShow, showBackButton } = props;
+    const { title, isShow } = props;
     return (
         <>
         { isShow && (
@@ -57,11 +55,9 @@ const Header = styled.header`
     top: 0;
     left: 0;
     right: 0;
-    height: 54px;
     background: #fff;
     z-index: 50;
     transition: background-color .2s;
-    padding: 16px 20px;
     display: flex;
     flex-direction: row;
     align-items: center;
