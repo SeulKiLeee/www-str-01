@@ -1,8 +1,8 @@
 'use client';
 
+import TotalActiveCalories from '@/components/elements/home/detail/TotalActiveCalories';
 import Layout from '@/components/layout/Layout';
 import TapMenu from '@/components/layout/TabMenu';
-import TitleHeader from '@/components/layout/TitleHeader';
 
 
 const MyTodayActivitiesPage = ():JSX.Element => {
@@ -10,7 +10,7 @@ const MyTodayActivitiesPage = ():JSX.Element => {
     const tabMenuList = [
         {
             tabTitle: '전체 활동',
-            tabComponent: <div>활동</div>
+            tabComponent: <TotalActiveCalories/>
         },
         {
             tabTitle: '걷기',

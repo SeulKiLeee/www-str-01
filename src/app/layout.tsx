@@ -2,6 +2,7 @@
 
 import '@/styles/globals.css'
 import StyledComponentsRegistry from '@/lib/registry';
+import { NextUIProvider } from '@nextui-org/react';
 import Layout from '@/components/layout/Layout';
 import React from "react";
 
@@ -15,9 +16,11 @@ export default function RootLayout({
     <html lang="ko">
       <body>
         <StyledComponentsRegistry>
-          <Layout mainNavigationBar={true}>
-            {children}
-          </Layout>
+          <NextUIProvider>
+            <Layout mainNavigationBar={true}>
+              {children}
+            </Layout>
+          </NextUIProvider>
         </StyledComponentsRegistry>
       </body>
     </html>
