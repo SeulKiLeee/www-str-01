@@ -1,13 +1,12 @@
 'use client';
 
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
-import React from 'react';
+import React, { useState } from 'react';
+import styles from '@/styles/page.module.css';
 import styled from 'styled-components';
 
 interface ITapMenuItem {
     tapName: string;
-    tapLink: string;
     tapComponent: React.ReactNode;
 }
 
@@ -18,22 +17,35 @@ interface IProps {
 
 const TapMenu = ( props:IProps ): JSX.Element => {
     const { tapMenuList } = props;
-    const router = useRouter();
+    const [ selectedTap, setSelectedTap ] = useState<ITapMenuItem>();
 
 
-    const onClickBackButton = () => {
-        router.back();
+    const onClickTap = ( tapName:string, tapComponent: React.ReactNode) => {
+        setSelectedTap({
+            tapName,
+            tapComponent
+        });
     }
 
 
     return (
         <>
             <TapMenuWrap>
-                <CenterTitle>
-                </CenterTitle>
-                <RightActionBt>
-                </RightActionBt>
+               {
+                tapMenuList.map((item, index) => {
+                    return (
+                        <TapMenuItem key={index} onClick={() => onClickTap(item.tapName, item.tapComponent)}>
+                            <span>{item.tapName}</span>
+                        </TapMenuItem>
+                    )
+                })
+               }
             </TapMenuWrap>
+            <div className={styles.main}>
+                {
+                    selectedTap && selectedTap.tapComponent
+                }
+            </div>
         </>
     )
 }
@@ -41,21 +53,9 @@ const TapMenu = ( props:IProps ): JSX.Element => {
 export default TapMenu;
 
 
-const Header = styled.header`
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: #fff;
-    z-index: 50;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-`;
-
 const TapMenuWrap = styled.div`
-    position: relative;
+    position: fixed;
+    top: 54px;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -63,31 +63,13 @@ const TapMenuWrap = styled.div`
 `;
 
 
-const BackButtonWrap = styled.div`
-    position: absolute;
-    left: 0;
+const TapMenuItem = styled.div<{ $isSelected?: boolean}>`
     cursor: pointer;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-`;
-
-const CenterTitle = styled.div`
-    display: flex;
-    width: 100%;
-    flex-direction: row;
-    justify-content: center;
+    flex:1;
     text-align: center;
-    padding: 0 1rem;
-    span {
-        font-weight: bold;
-        font-size: 1.2rem;
-    }
-`;
-
-const RightActionBt = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: right;
-    cursor: pointer;
+    border-bottom: 1px solid #0000
+        span{
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
 `;

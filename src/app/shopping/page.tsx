@@ -1,17 +1,13 @@
-import styles from '@/styles/page.module.css';
-import MainHeader from '@/components/layout/MainHeader';
-import BottomNavigator from '@/components/layout/BottomNavigator';
+'use client';
+
+import Layout from '@/components/layout/Layout';
 
 const ShoppingPage = ():JSX.Element => {
   return (
     <>
-      <MainHeader
-        isShow={true}
-      />
-       <div className={styles.main}>
+      <Layout mainNavigationBar={true} hasTapBar={true}>
         <h1>Shopping Page</h1>
-      </div>
-      <BottomNavigator isShow={true}/>
+      </Layout>
     </>
   )
 }

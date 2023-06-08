@@ -49,5 +49,4 @@ const CardSectionWrapper = styled.div<IProps>`
     z-index: 1;
     padding: 20px 20px 24px;
     // box-shadow: 1px 4px 10px 2px #e5e5e5;
-}
 `;

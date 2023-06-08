@@ -1,17 +1,33 @@
+'use client';
+
+import Layout from '@/components/layout/Layout';
+import TapMenu from '@/components/layout/TapMenu';
 import TitleHeader from '@/components/layout/TitleHeader';
-import styles from '@/styles/page.module.css';
+
 
 const MyTodayActivitiesPage = ():JSX.Element => {
+
+    const tapMenuList = [
+        {
+            tapName: '전체 활동',
+            tapComponent: <div>활동</div>
+        },
+        {
+            tapName: '걷기',
+            tapComponent: <div>걷기</div>
+        }
+    ];
+
+
     return (
         <>
-            <TitleHeader
-                isShow={true}
-                showBackButton={true}
-                title='총 활동 칼로리'
-             />
-            <div className={styles.main}>
-                <h1>My Today Activities Page</h1>
-            </div>
+            <Layout 
+                title="나의 오늘 활동"
+                canGoBack={true} 
+                hasTapBar={false}
+            >
+                <TapMenu tapMenuList={tapMenuList}/>
+            </Layout>
         </>
     )
 }

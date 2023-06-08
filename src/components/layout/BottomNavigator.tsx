@@ -5,15 +5,11 @@ import React from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
 
-interface IProps {
-    isShow: boolean;
-}
 
-const BottomNavigator = (props:IProps): JSX.Element => {
-    const { isShow } = props;
+const BottomNavigator = (): JSX.Element => {
+
     return (
         <>
-        { isShow && (
             <Navigator>
                 <NavigatorBtWrapUl>
                     <Link href='/shopping'>
@@ -61,7 +57,6 @@ const BottomNavigator = (props:IProps): JSX.Element => {
                     </Link>
                 </NavigatorBtWrapUl>
             </Navigator>
-        )}
         </>
     )
 }

@@ -9,12 +9,7 @@ export default function HealthPageLayout({
 }) {
   return (
     <>
-        <MainHeader
-          isShow={true}
-          showBackButton={false}
-        />
       {children}
-      <BottomNavigator isShow={true}/>
     </>
   );
 }

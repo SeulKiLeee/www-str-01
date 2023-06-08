@@ -1,19 +1,17 @@
-'use client'
-import BottomNavigator from '@/components/layout/BottomNavigator'
-import MainHeader from '@/components/layout/MainHeader'
+'use client';
+
 import { useAuthStore } from '@/stores/auth';
 import styles from '@/styles/page.module.css'
 import MyTodayActivitiesCard from '@/components/elements/home/MyTodayActivitiesCard';
+import Layout from '@/components/layout/Layout';
 
 const HomePage = ():JSX.Element => {
   const isLogedIn = useAuthStore((state) => state.isLogedIn);
 
   return (
     <>
-      <MainHeader
-        isShow={true}
-      />
-        <main className={styles.main}>
+    <Layout mainNavigationBar={true} hasTapBar={true}>
+      <main className={styles.main}>
           {
             isLogedIn ? (
               <div>
@@ -34,9 +32,8 @@ const HomePage = ():JSX.Element => {
               </div>
             )
           }
-
         </main>
-      <BottomNavigator isShow={true}/>
+      </Layout>
     </>
   )
 }
