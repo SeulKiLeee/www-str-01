@@ -12,7 +12,7 @@ interface ILayoutProps {
     title?: string;
     mainNavigationBar?: boolean;
     canGoBack?: boolean;
-    hasTapBar?: boolean;
+    hasTabBar?: boolean;
     rightButton?: React.ReactNode;
     children: React.ReactNode;
     seoTitle?: string;
@@ -21,7 +21,7 @@ interface ILayoutProps {
 
 
 export default function Layout (props:ILayoutProps):JSX.Element {
-    const { title, mainNavigationBar, canGoBack, hasTapBar, rightButton, children, seoTitle } = props;
+    const { title, mainNavigationBar, canGoBack, hasTabBar, rightButton, children, seoTitle } = props;
     const router = useRouter();
     
     const onClickBackButton = () => {
@@ -87,8 +87,8 @@ export default function Layout (props:ILayoutProps):JSX.Element {
                     </TitleHeaderWrap>
                 )}
             </Header>
-            <ContentBody hasTapBar={hasTapBar}>{children}</ContentBody>
-            { hasTapBar ? <BottomNavigator /> : null }
+            <ContentBody hasTabBar={hasTabBar}>{children}</ContentBody>
+            { hasTabBar ? <BottomNavigator /> : null }
           </div>
         </>
     )
@@ -163,8 +163,8 @@ const CenterTitle = styled.div`
     text-align: center;
     padding: 0 1rem;
     span {
-        font-weight: bold;
-        font-size: 1.2rem;
+        font-weight: 500;
+        font-size: 1.1rem;
     }
 `;
 
@@ -175,7 +175,7 @@ const RightActionBt = styled.div`
     cursor: pointer;
 `;
 
-const ContentBody = styled.div<{hasTapBar?: boolean}>`
+const ContentBody = styled.div<{hasTabBar?: boolean}>`
     padding-top: 1rem;
-    padding-bottom: ${props => props.hasTapBar ? '4rem' : '0'};
+    padding-bottom: ${props => props.hasTabBar ? '4rem' : '0'};
 `;

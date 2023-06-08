@@ -1,20 +1,20 @@
 'use client';
 
 import Layout from '@/components/layout/Layout';
-import TapMenu from '@/components/layout/TapMenu';
+import TapMenu from '@/components/layout/TabMenu';
 import TitleHeader from '@/components/layout/TitleHeader';
 
 
 const MyTodayActivitiesPage = ():JSX.Element => {
 
-    const tapMenuList = [
+    const tabMenuList = [
         {
-            tapName: '전체 활동',
-            tapComponent: <div>활동</div>
+            tabTitle: '전체 활동',
+            tabComponent: <div>활동</div>
         },
         {
-            tapName: '걷기',
-            tapComponent: <div>걷기</div>
+            tabTitle: '걷기',
+            tabComponent: <div>걷기</div>
         }
     ];
 
@@ -22,11 +22,11 @@ const MyTodayActivitiesPage = ():JSX.Element => {
     return (
         <>
             <Layout 
-                title="나의 오늘 활동"
+                title="총 활동 칼로리"
                 canGoBack={true} 
-                hasTapBar={false}
+                hasTabBar={false}
             >
-                <TapMenu tapMenuList={tapMenuList}/>
+                <TapMenu tabMenuList={tabMenuList}/>
             </Layout>
         </>
     )
